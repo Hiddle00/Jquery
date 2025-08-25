@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <div class="" id="did">
+        div태그
+        <div class="">div2</div>
+    </div>
+</body>
+</html>
+<script>
+    //4.문서 태그 내부 조작
+    //innertext, innerHTML
+    let divtext = $("#did").text();
+    console.log(divtext);
+    //document.getElementById("did").innertext;
+    //text요소만 조작 가능
+
+    //$("div").text("<div>div3</div>");
+    //document.getElementById("did").innertext = "변경";
+
+    let divHtml = $("#did").html();
+    console.log("divHtml");
+    //document.getElementById("did").innerHTML;
+
+    $("#did").html("<div>div3</div>");
+    //document.getElementById("did").innerHTML = "<div>div3</div>";
+</script>

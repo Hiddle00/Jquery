@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <style>
+        *{
+            color:red;
+        }
+        ul > li{
+            color:blue;
+        }
+        div li{
+            color:purple;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="a">jquery</h1>
+    <h2 id="a">선택자</h2>
+    
+    <h3 class="item select">1번</h3> <!-- 2 class 부여 -->
+    <h3 class="item">2번</h3>
+    <h3 class="item">3번</h3>
+    <div class="">
+        <ul>
+            <li>apple</li>
+            <li>banana</li>
+            <li>cat</li>
+            <li>dog</li>
+        </ul>
+    </div>
+    <input type="text">
+    <input type="button" value="클릭">
+</body>
+</html>
+<script>
+    //jquery를 이용한 dom요소 찾아오기(선택자)
+    //$("선택자");
+    //1. 전체 선택자(html페이지에 있는 모든 문서 객체 선택)
+    let all = $("*");           //자주 쓸일 없음
+    console.log(all);
+
+    //2. 태그 선택자(html페이지에 있는 특정 태그만 선택)
+    let h1 = $("h1");           //없다면 빈배열
+    console.log(h1);
+
+    let h1h2 = $("h1, h2");     //하나 이상의 태그 선택자를 동시에 사용
+    console.log(h1h2);          //JS로는 불가능. 따로 찾아야
+
+    //3. id 선택자(html페이지에 있는 특정 id속성 값을 가지고있는 태그만 선택)
+    let a = document.getElementById("a");
+    console.log(a);
+    //특정 id속성의 값이 여러개여도 하나만 찾아온다.
+    let ida = $("#a");
+    console.log(ida);
+
+    let h2a = $("h2#a");
+    console.log(h2a);
+    
+    //4. class 선택자(html페이지에 있는 특정 class속성 값을 가지고있는 태그들만 선택)
+    let items = $(".item");
+    console.log(items);
+
+    let select = $("h3.select");
+    console.log(select);
+
+    //두 클래스 속성을 모두 갖는 html속성만 선택도 가능
+    let itemSelect = $(".item.select");
+    console.log(itemSelect);
+
+    //5. 자식 선택자(html페이지에 있는 )
+    let divli = $("div > li");      //직계만 선택한다
+    console.log(divli);
+    let ulli = $("ul > li");
+    console.log(ulli);
+
+    //6. 자손 선택자
+    let li = $("div li");
+    console.log(li);
+
+    //7. 속성 선택자
+    let text = $("input[type='text']");
+    // = let text = $("input:text");        //input만 가능. css에서 불가
+    console.log(text);
+
+    //8. 필터 선택자(홀,짝)
+    let liOdd = $("li:odd");
+    console.log(liOdd);
+
+    let liEven = $("li:even");
+    console.log(liEven);
+</script>

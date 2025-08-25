@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight{
+            color:yellowgreen;
+        }
+        .a{
+            background-color: darkmagenta;
+        }
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    
+</head>
+<body>
+    <div class="a">div</div>
+    <p id="pid">
+        p태그
+        <p>p1</p>
+    </p>
+</body>
+</html>
+<script>
+    //jquery의 method(함수)
+    //html요소를 조작하는 함수
+    //1.클래스 속성 조작 (클래스 제거,삽입 가능)
+    $(".a").addClass("highlight");
+    $(".a").removeClass("a");
+
+    //2.문서 속성 조작
+    let divAttr = $("div").attr("class");       //파라미터가 1면 꺼내기
+    console.log(divAttr);
+    document.getElementsByTagName("div")[0].className;
+    //div태그를 가진 요소를 찾아 class속성을 꺼내온다
+
+    $("div").attr("id","did");                  //파라미터가 2면 insert
+    document.getElementsByTagName("div")[0].id = "did";
+    //div태그를 가진 요소를 찾아 id속성의 값을 did로 변경한다.
+
+    $("div").removeAttr("class");
+    //div태그를 가진 요소를 찾아 속성 자체를 삭제
+
+    //3.문서 스타일 조작
+    let color = $("div").css("color");
+    console.log(color);
+    //div태그를 가진 요소를 찾아 style속성의 color속성의 값을 꺼내온다.
+
+    $("div").css("color","red");
+    // document.getElementsByTagName("div")[0].style.color = "red";
+    //div태그를 가진 요소를 찾아 style속성의 color속성의 값을 red로
+
+    //4.문서 태그 내부 조작
+    //innertext, innerHTML
+    // let pidtext = $("#did").text();
+    // console.log(pidtext);
+</script>

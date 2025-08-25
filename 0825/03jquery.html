@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            color:red;
+        }
+        /* p태그 선택자 */
+        .dclass{
+            color:blue;
+        }
+        /* 클래스 선택자 (dclass) */
+        #did{
+            color:violet;
+        }
+        /* id 선택자 (did)*/
+        div[name="dname"]{
+            color:aqua;
+        }
+        /* 속성 선택자 (name속성이 dname)*/
+    </style>
+    <script src="jquery-3.7.1.min.js"></script>
+    <!-- 
+        DOM과 관련된 객체를 찾아오기 쉽게 만든 라이브러리
+        html요소에 이벤트를 부여하기 쉽게 만든 라이브러리
+     -->
+</head>
+<body>
+    <div id="did">div1</div>
+    <div class="dclass">div2</div>
+    <div class="dclass">div3</div>
+    <div name="dname">div4</div>
+    <p>p1</p>
+    
+</body>
+</html>
+<script>
+    //1.JS로 id가 did인 html요소 찾아오기
+    let did1 = document.getElementById("did");
+    console.log(did1);
+    //jquery로 변경
+    let did2 = $("#did"); //jq는 배열로 찾아온다
+    console.log(did2);
+
+    //2.JS로 class가 dclass인 요소들 찾아오기
+    let dclass1 = document.getElementsByClassName("dclass");
+    console.log(dclass1);
+    //jquery로 변경
+    let dclass2 = $(".dclass");
+    console.log(dclass2);
+
+    //JS로 찾아온 dclass의 배경색을 purple로 변경
+    //dclass1[0].style.backgroundColor = "purple";
+    for(let i = 0; i < dclass1.length; i++){
+        dclass1[i].style.backgroundColor = "purple";
+    }
+    //jquery로 찾아온 dclass2의 배경색을 orange로 변경
+    dclass2.css("background-color", "orange");
+    dclass2.text("변경"); // = innertext
+
+    //3.JS로 name이 dname인 요소들 찾아오기
+    let dname1 = document.getElementsByName("dname");
+    console.log(dname1);
+    //jquery로 변경
+    let dname2 = $("div[name='dname']");
+    console.log(dname2);
+
+    //4.JS로 p태그 요소들 찾아오기
+    let p1 = document.getElementsByTagName("p");
+    console.log(p1);
+    //jquery로 변경
+    let p2 = $("p");
+    console.log(p2);
+
+</script>
