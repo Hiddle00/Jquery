@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="" id="d1">div1</div>
+    <div class="">div2</div>
+    <input type="text">
+    <p>p1</p>
+    <input type="checkbox" id="cb">
+</body>
+</html>
+<script>
+    //JS로 이벤트 부여하기
+    //p태그에 클릭 이벤트 부여
+    // let p1 = document.getElementsByTagName("p");
+    // p1[0].addEventListener("click",function(){
+    //     alert("p클릭");
+    // });
+    // //모든 div태그에 클릭이벤트 부여
+    // let div = document.getElementsByTagName("div");
+    // for(let i = 0;i < div.length; i++){
+    //     div[i].addEventListener("click",function(){
+    //         alert(i + "번째 div 클릭");
+    //     });
+    // }
+    //jquery로 이벤트 부여하기
+    $("p").click(function(){
+        alert("p 클릭!");
+    });
+
+    $("div").click(function(){
+        alert("div 클릭!");
+    });
+    //jquery로 찾아온 html요소에 이벤트를 부여할 때 반복문을 사용하지 않아도 찾아온 모든 요소에 동일한 이벤트를 부여할 수 있다
+    //마우스
+    //click, mouseover, mouseout
+    //키보드
+    //keydown, ketup
+
+    $("p").mouseover(function(){
+        console.log("p에 마우스 올라감");
+        console.log(this); // this = p
+        //this.style.color="red" //JS코드
+        console.log($(this));
+        $(this).css("color","red"); //jquery 코드
+        //$(this)는 JS객체를 jquery객체로 변환한다
+    });
+
+    $("p").mouseout(function(){
+        $(this).css("color","black");
+    })
+
+    $("input").keydown(function(){
+        console.log("키눌림");
+        console.log(this.value);
+        console.log($(this).val());
+    });
+
+    $("input").keyup(function(){
+        console.log("키 떨어짐");
+        console.log(this.value);
+        console.log($(this).val());
+    });
+
+    //checkbox의 상태변화 이벤트
+    $("#cb").change(function(){
+        console.log("체크박스 상태변화");
+    });
+
+    let div1 = document.getElementById("d1");
+    let div2 = $("d1");
+
+    div1.innerText = "hello";
+    div2.innerText = "hi";  //jq객체에 js코드 사용. 작동안함
+
+    div2.text("hi");
+    //div1.text("bye"); //js객체에 jq코드 사용. 오류
+
+    $("div1").text("bye");
+    //JS코드로 찾아온 html요소를 $()감싸서 jquery객체로 변환할 수 있다
+</script>

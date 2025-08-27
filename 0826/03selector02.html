@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1">1</div>
+    <div class="d1">2</div>
+    <div class="d1">3</div>
+    <div name="d1">4</div>
+</body>
+</html>
+<script>
+    //아이디 선택자 id속성의 값이 d1인 요소 찾기
+    $("d1");
+    //클래스 선택자 class속성의 값이 d1인 요소
+    $(".d1");
+    //속성 선택자 tag가 div이고 name속성의 값이 d1인 요소
+    //태그가 포함되어야 한다
+    $("div[name='d1']");
+    //태그 선택자 태그가 div인 요소
+    console.log($("div").text());
+
+    let div = $("div");
+    console.log(div);
+    console.log(div[0].innerText); //div는 JS객체, div[0]은 jquery객체
+    //필터 선택자
+    let div1 = $("div").eq(0);
+    console.log(div1);
+    //$("#di")[0]
+    //document.getElementsByTagName("div")[0];
+    //jquery코드를 이용해 찾아온 html요소들을 []인덱스를 이용해 접근하면 jquery객체가 아닌, 일반 JS객체로 반환된다.
+    //jquery코드를 이용해 찾아온 html요소중 하나의 요소를 jquery객체로 접근하기 위해서는 eq()함수를 사용해야한다.
+
+    $("div").first();
+    //모든 div태그 중 첫번째 요소만 선택
+    $("div").last();
+    //모든 div태그 중 마지막 요소만 선택
+</script>

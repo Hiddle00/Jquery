@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="" id="d1">div</div>
+    <input id="i1" type="text" value="밸류">
+</body>
+</html>
+<script>
+    document.getElementById("d1").innerText;
+    //div라는 텍스트
+    $("#d1").text();
+
+    //input은 value를 찾아야한다
+    let inputText = document.getElementById("i1").value;
+    console.log(inputText);
+
+    //jquery에선 .val()
+    let inputValue = $("#i1").val();
+    console.log(inputValue);
+
+    $("#i1").val("변경");
+</script>

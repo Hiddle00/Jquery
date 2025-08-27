@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="jquery-3.7.1.min.js"></script>
+    <style>
+        #container{
+            border : 1px solid black;
+            padding : 20px;
+            margin-top: 30px;
+        }
+
+        .reply{
+            border : 1px solid forestgreen;
+
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <h1>댓글</h1>
+    <input type="text" id="reply">
+    <input type="button" value="작성" id="btn">
+
+    <div class="" id="container">
+
+    </div>
+</body>
+</html>
+<script>
+    $("#reply").focus();
+
+    function submit(){
+        let reply = $("#reply");
+        let value = reply.val();
+        if(value.trim() == ""){
+            alert("빈문자는 허용하지 않습니다.");
+            // >> 만약 value가 ""면 함수 실행 종료
+            reply.val("");
+            reply.focus();
+            return;
+        }
+        
+        $("#container").prepend("<div class='reply'>" + value + "</div>");
+        //1-2.
+        reply.val("");
+        reply.focus();
+    }
+    //이벤트활용
+    //댓글 작성
+    //1. 작성버튼 클릭시 input text의 입력값을 아래 div에 추가
+    //1-1. input text가 공란이면 추가하지 않음
+    
+    //1-2. 아래 div에 추가한 뒤엔 input text 초기화
+    //1-3. 아래 div에 텍스트를 추가할시 마지막 추가 댓글이 맨 위로
+    //1-4. input text에서 enter를 누르면 작성한 댓글 추가
+    $("#reply").keydown(function(e){
+        //키보드 이벤트에서는 눌린 키의 코드를 조회할 수 있다.
+        console.log(e);
+        //e.key == "Enter"
+        //e.wihch == 13
+        if(e.key == "Enter"){
+            $("#btn").click();
+        }
+    });
+
+    $("#btn").click(submit);
+</script>

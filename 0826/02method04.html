@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="">
+        <h1>A</h1>
+        <h1>B</h1>
+    </div>
+</body>
+</html>
+<script>
+    //html의 요소 제거, 추가
+    //1. html 요소 제거
+    //$("div").remove();
+    //요소 자체를 삭제한다
+
+    //2.html 요소의 내부만 제거
+    //$("div").empty();
+
+    //3.요소를 태그 내의 가장 뒤에 추가
+    $("div").append("<h1>C</h1>");
+    //4.요소를 태그 내의 가장 앞에 추가
+    $("div").prepend("<h1>D</h1>");
+    //5.요소를 태그 앞에 추가(html에선 위와 아래)
+    $("div").before("<div style='color:blue'><h1>ㄱ</h1></div>");
+    //6.요소를 태그 뒤에 추가
+    $("div").after("<div style='color:blue'><h1>ㄴ</h1></div>");
+</script>
