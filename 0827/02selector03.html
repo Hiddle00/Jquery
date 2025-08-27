@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li id="li2">2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div id="d1">
+        <div id="d2">
+            <div id="d3">div</div>
+            <span>span</span>
+            <p>p</p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    //1. 부모선택자
+    let parent = $("#li2").parent();
+    console.log(parent);
+
+    let parent2 = $("span").parent();
+    console.log(parent2);
+
+    let parent3 = $("div").parent();
+    console.log(parent3);
+    //2. 자식선택자
+    let children = $("ul").children();
+    console.log(children);
+
+    let children2 = $("ul").children("#li2");
+    console.log(children2);
+
+    let children3 = $("#d2").children();
+    console.log(children3);
+    //3. 형제선택자
+    let next = $("#d3").next();
+    console.log(next);
+    
+    let prev = $("#d3").prev();
+    console.log(prev);
+    //nextall, prevall
+
+    $("#d1").parent().children().next().next();
+</script>
