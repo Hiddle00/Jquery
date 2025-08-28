@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //비동기, 동기
+    //동기화 : 순차적으로 처리되는것, 일괄처리
+    //두가지 이상의 작업을 일치시키는 것 (데이터이동 등등)
+
+    //비동기 : 두가지 이상의 작업을 따로 처리하는 것
+    console.log("a");
+    setTimeout(function(){       //비동기작업
+        console.log("b");
+    }, 3000);
+    //alert("b");             //동기작업 끝날때까지 이후 작업이 대기한다
+    console.log("c");
+    
+</script>

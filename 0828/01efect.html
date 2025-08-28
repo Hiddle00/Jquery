@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1">div</div>
+    <button id="btnHide" type="button">숨기기</button>
+    <button id="btnShow" type="button">보이기</button>
+    <button id="btnToggle" type="button">토글</button>
+</body>
+</html>
+<script>
+    //jquery의 시각적 효과
+    //$("#d1").css("display", "none");
+    $("#btnHide").click(function(){
+        $("#d1").hide();
+    });
+    $("#btnShow").click(function(){
+        $("#d1").show();
+    });
+    //하나로 합쳐진것이 토글버튼
+    $("#btnToggle").click(function(){
+        // let display = $("#d1").css("display");
+        // console.log(display);
+        // //display == "block"
+        // if(display == "block"){
+        //     $("#d1").hide();
+        // }else{
+        //     $("#d1").show();
+        // }
+        $("#d1").toggle();
+    });
+
+    //fadein, fadeout 줌인 줌아웃 등등
+</script>

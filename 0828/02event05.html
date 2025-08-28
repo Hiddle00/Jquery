@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="jquery-3.7.1.min.js"></script>
+    <style>
+        .noti{
+            display: none;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    아이디 : <input type="text" id="id"><br>
+    <div class="noti">중복된 아이디가 존재합니다.</div>
+    비밀번호 : <input type="password"><br>
+    닉네임 : <input type="text"><br>
+    <input type="submit" value="회원가입"><br>
+</body>
+</html>
+<script>
+    window.onload = function(){
+        $("#id").focus();
+    }
+    //아이디 입력창에 키보드가 입력될 때 아이디 중복 확인
+    //이미 아이디가 hong인 회원이 존재
+    $("#id").keyup(function(){
+        let value = $(this).val();
+
+        //value가 비어있다면 noti를 보여줄 필요가 없고
+        //아이디 중복확인도 필요하지 않음
+        if(value == ""){
+            $(".noti").hide();
+            return;
+        }
+        if(value == "hong"){
+            $(".noti").show().css("color","darkred").text("중복된 아이디가 존재합니다.");
+        }else{
+            $(".noti").show().css("color","green").text("사용 가능한 아이디 입니다.");
+        }
+        console.log(value);
+    });
+</script>
